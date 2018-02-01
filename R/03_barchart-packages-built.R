@@ -1,4 +1,5 @@
 ## make a barchart from the frequency table in data/add-on-packages-freqtable.csv
+data <- read.csv("data/add-on-packages-freqtable.csv")
 
 ## read that csv into a data frame, then ...
 
@@ -8,6 +9,7 @@ ggplot(apt_freqtable, aes(x = Built, y = n)) +
 
 ## write this barchart to figs/built-barchart.png
 ## if you use ggplot2, ggsave() will help
+ggsave(here("figs", "barchart.png"))
 
 ## YES overwrite the file that is there now
 ## that came from me (Jenny)
