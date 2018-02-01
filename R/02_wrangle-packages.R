@@ -1,8 +1,13 @@
 ## create a data frame from data/installed-packages.csv
 ## with, e.g., readr::read_csv() or read.csv()
+pkg <- read.csv("data/installed-packages.csv")
 
 ## filter out packages in the default library
+filter_pkg <- ipkg %>% filter(Priority == "base")
+
 ## keep variables Package and Built
+select_pkg <- filter_pkg %>% select(Package, Built)
+
 ## if you use dplyr, code like this will work:
 apt <- ipt %>%
   filter(LibPath == .libPaths()[1]) %>%
